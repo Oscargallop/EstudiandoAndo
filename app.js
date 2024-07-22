@@ -16,13 +16,13 @@ function asignarTextoElemento(elemento, texto) {
 function verificarIntento() {
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
     // Verificar que el numero ingresado sea menor que el numero maximo
-    if (numeroDeUsuario < numeroMaximo) {
+    if (numeroDeUsuario < (numeroMaximo + 1)) {
         if (numeroDeUsuario === numeroSecreto) {
             asignarTextoElemento('p',`Acertaste el número en ${intentos} ${(intentos === 1) ? 'vez' : 'veces'}`);
             document.getElementById('reiniciar').removeAttribute('disabled');
         } else {
             //El usuario no acertó.
-            if (numeroDeUsuario > (numeroSecreto + 1)) {
+            if (numeroDeUsuario > numeroSecreto) {
                 asignarTextoElemento('p','Nezuco dice que el número es menor');
             } else {
              asignarTextoElemento('p','Nezuco dice que el número es mayor');
