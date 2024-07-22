@@ -22,7 +22,7 @@ function verificarIntento() {
             document.getElementById('reiniciar').removeAttribute('disabled');
         } else {
             //El usuario no acertó.
-            if (numeroDeUsuario > numeroSecreto) {
+            if (numeroDeUsuario > (numeroSecreto + 1)) {
                 asignarTextoElemento('p','Nezuco dice que el número es menor');
             } else {
              asignarTextoElemento('p','Nezuco dice que el número es mayor');
